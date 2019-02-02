@@ -24,30 +24,43 @@
 // console.log(sum)
 
 // **************************
-function handlePosts() {
-  var posts = [
-    { id: 23, title: 'Daily JS News' },
-    { id: 52, title: 'Code Refactor City' },
-    { id: 105, title: 'The Brightest Ruby' }
-  ];
+// function handlePosts() {
+//   var posts = [
+//     { id: 23, title: 'Daily JS News' },
+//     { id: 52, title: 'Code Refactor City' },
+//     { id: 105, title: 'The Brightest Ruby' }
+//   ];
   
-  // for (var i = 0; i < posts.length; i++) {
-  //   savePost(posts[i]);
-  // }
-  posts.forEach(function(){
-      savePost(posts[i]);
-  });
-}
+//   // for (var i = 0; i < posts.length; i++) {
+//   //   savePost(posts[i]);
+//   // }
+//   posts.forEach(function(){
+//       savePost(posts[i]);
+//   });
+// }
 // **********************************
 
-var images = [
-  { height: 10, width: 30 },
-  { height: 20, width: 90 },
-  { height: 54, width: 32 }
-];
-var areas = [];
+// var images = [
+//   { height: 10, width: 30 },
+//   { height: 20, width: 90 },
+//   { height: 54, width: 32 }
+// ];
+// var areas = [];
 
-images.forEach(function(image){
-    areas.push(image['height'] * image['width']);
-});
+// images.forEach(function(image){
+//     areas.push(image['height'] * image['width']);
+// });
 // *********************************
+
+var numbers = [1,2,3]
+var doubledNumbers = []
+for (var i = 0; i < numbers.length; i++) {
+  doubledNumbers.push(numbers[i] * 2)
+}
+
+var doubled = numbers.map(function(number) {
+  return number * 2
+})
+
+console.log(doubledNumbers)
+console.log(doubled)
