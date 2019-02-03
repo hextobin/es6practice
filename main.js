@@ -89,26 +89,50 @@
 
 // console.log(heights)
 
-var trips = [
-  { distance: 34, time: 10 },
-  { distance: 90, time: 50 },
-  { distance: 59, time: 25 }
-];
+// var trips = [
+//   { distance: 34, time: 10 },
+//   { distance: 90, time: 50 },
+//   { distance: 59, time: 25 }
+// ];
 
-var speeds = trips.map(function(trip) {
-  return trip.distance / trip.time
-});
+// var speeds = trips.map(function(trip) {
+//   return trip.distance / trip.time
+// });
 
-console.log(speeds)
+// console.log(speeds)
 
-var paints = [ { color: 'red' }, { color: 'blue'}, { color: 'yellow'}];
+// var paints = [ { color: 'red' }, { color: 'blue'}, { color: 'yellow'}];
 
-function pluck(array, property) {
-  var plucked = array.map(function(item) {
-    return item[property]
-  })
-  return plucked
-}
+// function pluck(array, property) {
+//   var plucked = array.map(function(item) {
+//     return item[property]
+//   })
+//   return plucked
+// }
+
+// ******************************
+
+var products = [
+  { name: 'cucumber', type: 'vegetable'},
+  { name: 'banana', type: 'fruit'},
+  { name: 'celery', type: 'vegetable'},
+  { name: 'orange', type: 'fruit'},
+]
+
+var filteredProducts = []
+
+// for(var i = 0; i < products.length; i++) {
+//   if(products[i].type === 'fruit') {
+//     filteredProducts.push(products[i])
+//   }
+// }
+
+console.log(filteredProducts)
+
+filteredProducts =  products.filter(function(product) {
+  return product.type === 'fruit'
+})
+console.log(filteredProducts)
 
 
 
