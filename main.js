@@ -144,19 +144,48 @@
 // })
 // console.log(filteredProducts)
 
-var post = { id: 4, title: 'New Post' }
-var comments = [
-  {postId:4, content: 'awesome post' },
-  {postId:3, content: 'it was ok' },
-  {postId:4, content: 'neat' },
-]
+// var post = { id: 4, title: 'New Post' }
+// var comments = [
+//   {postId:4, content: 'awesome post' },
+//   {postId:3, content: 'it was ok' },
+//   {postId:4, content: 'neat' },
+// ]
 
-function commentsForPost(post, comments) {
-  return comments.filter(function(comment) {
-    return post.id === comment.postId
+// function commentsForPost(post, comments) {
+//   return comments.filter(function(comment) {
+//     return post.id === comment.postId
+//   })
+// }
+
+// console.log(commentsForPost(post, comments))
+
+// numbers greater than 50
+
+var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+
+var filteredNumbers = numbers.filter(function(number) {
+    return number > 50
+});
+
+// returning admin users
+
+var users = [
+  { id: 1, admin: true },  
+  { id: 2, admin: false },
+  { id: 3, admin: false },
+  { id: 4, admin: false },
+  { id: 5, admin: true },
+ ];
+ 
+ var filteredUsers = users.filter(function(user) {
+     return user.admin === true
+ });
+
+//  reject function
+
+function reject(array, iteratorFunction) {
+  return array.filter(function(item){
+      return !iteratorFunction(item)
   })
 }
-
-console.log(commentsForPost(post, comments))
-
-
+// *******************************
