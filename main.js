@@ -244,3 +244,20 @@ var users = [
 var admin = users.find(function(user) {
     return user.admin === true
 });
+
+var accounts = [
+  { balance: -10 },
+  { balance: 12 },
+  { balance: 0 }
+];
+
+var account = accounts.find(function(account) {
+    return account.balance === 12
+});
+
+function findWhere(array, criteria) {
+  var property = Object.keys(criteria)[0]
+  return array.find(function(element) {
+      return element[property] === criteria[property]
+  })
+}
