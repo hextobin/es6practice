@@ -190,74 +190,94 @@
 // }
 // *******************************
 
-var users = [
-  { name: 'Jill' },
-  { name: 'Alex' },
-  { name: 'Bill' },
+// var users = [
+//   { name: 'Jill' },
+//   { name: 'Alex' },
+//   { name: 'Bill' },
+// ]
+
+// var user
+
+// user = users.find(function(user) {
+//   return user.name === 'Alex'
+// })
+
+// console.log(user)
+
+// function Car(model) {
+//   this.model = model
+// }
+
+// var cars = [
+//   new Car('Buick'),
+//   new Car('Camaro'),
+//   new Car('Focus'),
+// ]
+
+// var car = cars.find(function(car) {
+//   return car.model === 'Camaro'
+// })
+
+// console.log(car)
+
+// var posts = [
+//   { id: 1, title: 'New Post' },
+//   { id: 2, title: 'Old Post' },
+// ]
+
+// var comment = { postId: 1, content: 'Great Post' }
+
+// function postForComment(posts, comment) {
+//   return posts.find(function(post) {
+//     return post.id === comment.postId
+//   })
+// }
+
+// console.log(postForComment(posts, comment))
+
+// var users = [
+//   { id: 1, admin: false },
+//   { id: 2, admin: false },
+//   { id: 3, admin: true }
+// ];
+
+// var admin = users.find(function(user) {
+//     return user.admin === true
+// });
+
+// var accounts = [
+//   { balance: -10 },
+//   { balance: 12 },
+//   { balance: 0 }
+// ];
+
+// var account = accounts.find(function(account) {
+//     return account.balance === 12
+// });
+
+// function findWhere(array, criteria) {
+//   var property = Object.keys(criteria)[0]
+//   return array.find(function(element) {
+//       return element[property] === criteria[property]
+//   })
+// }
+
+// *********************************************
+
+var computers = [
+  { name: 'Apple', ram: 24 },
+  { name: 'Compaq', ram: 4 },
+  { name: 'Acer', ram: 32 },
 ]
 
-var user
-
-user = users.find(function(user) {
-  return user.name === 'Alex'
+var allcomputersCanRunProgram = computers.every(function(computer) {
+  return computer.ram >= 16
 })
 
-console.log(user)
+console.log(allcomputersCanRunProgram)
 
-function Car(model) {
-  this.model = model
-}
-
-var cars = [
-  new Car('Buick'),
-  new Car('Camaro'),
-  new Car('Focus'),
-]
-
-var car = cars.find(function(car) {
-  return car.model === 'Camaro'
+var someComputersCanRunProgra = computers.some(function(computer) {
+  return computer.ram <= 16
 })
 
-console.log(car)
-
-var posts = [
-  { id: 1, title: 'New Post' },
-  { id: 2, title: 'Old Post' },
-]
-
-var comment = { postId: 1, content: 'Great Post' }
-
-function postForComment(posts, comment) {
-  return posts.find(function(post) {
-    return post.id === comment.postId
-  })
-}
-
-console.log(postForComment(posts, comment))
-
-var users = [
-  { id: 1, admin: false },
-  { id: 2, admin: false },
-  { id: 3, admin: true }
-];
-
-var admin = users.find(function(user) {
-    return user.admin === true
-});
-
-var accounts = [
-  { balance: -10 },
-  { balance: 12 },
-  { balance: 0 }
-];
-
-var account = accounts.find(function(account) {
-    return account.balance === 12
-});
-
-function findWhere(array, criteria) {
-  var property = Object.keys(criteria)[0]
-  return array.find(function(element) {
-      return element[property] === criteria[property]
-  })
-}
+console.log(someComputersCanRunProgra)
