@@ -299,22 +299,42 @@
 // console.log(everyLength)
 // console.log(someLength)
 
-function Field(value) {
-  this.value = value
-}
+// function Field(value) {
+//   this.value = value
+// }
 
-Field.prototype.validate = function() {
-  return this.value.length > 0
-}
+// Field.prototype.validate = function() {
+//   return this.value.length > 0
+// }
 
-var username = new Field("2cool")
-var password = new Field("my_password")
-var birthdate = new Field("10/10/1900")
+// var username = new Field("2cool")
+// var password = new Field("my_password")
+// var birthdate = new Field("10/10/1900")
 
-var fields = [username, password, birthdate]
+// var fields = [username, password, birthdate]
 
-var fieldValidation = fields.every(function(field) {
-  return field.validate()
-})
+// var fieldValidation = fields.every(function(field) {
+//   return field.validate()
+// })
 
-console.log(fieldValidation)
+// console.log(fieldValidation)
+
+var requests = [
+  { url: '/photos', status: 'complete' },
+  { url: '/albums', status: 'pending' },
+  { url: '/users', status: 'failed' }
+];
+
+var inProgress = requests.some(function(request) {
+    return request.status === 'pending'
+});
+
+var users = [
+  { id: 21, hasSubmitted: true },
+  { id: 62, hasSubmitted: false },
+  { id: 4, hasSubmitted: true }
+];
+
+var hasSubmitted = users.every(function(user) {
+    return user.hasSubmitted === true
+});
