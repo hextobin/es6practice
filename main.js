@@ -264,20 +264,57 @@
 
 // *********************************************
 
-var computers = [
-  { name: 'Apple', ram: 24 },
-  { name: 'Compaq', ram: 4 },
-  { name: 'Acer', ram: 32 },
-]
+// var computers = [
+//   { name: 'Apple', ram: 24 },
+//   { name: 'Compaq', ram: 4 },
+//   { name: 'Acer', ram: 32 },
+// ]
 
-var allcomputersCanRunProgram = computers.every(function(computer) {
-  return computer.ram >= 16
+// var allcomputersCanRunProgram = computers.every(function(computer) {
+//   return computer.ram >= 16
+// })
+
+// console.log(allcomputersCanRunProgram)
+
+// var someComputersCanRunProgra = computers.some(function(computer) {
+//   return computer.ram <= 16
+// })
+
+// console.log(someComputersCanRunProgra)
+
+// var names = [
+//   "Alexandria",
+//   "Matthew",
+//   "Joe",
+// ]
+
+// var everyLength = names.every(function(name) {
+//   return name.length > 4
+// })
+
+// var someLength = names.some(function(name) {
+//   return name.length > 4
+// })
+
+// console.log(everyLength)
+// console.log(someLength)
+
+function Field(value) {
+  this.value = value
+}
+
+Field.prototype.validate = function() {
+  return this.value.length > 0
+}
+
+var username = new Field("2cool")
+var password = new Field("my_password")
+var birthdate = new Field("10/10/1900")
+
+var fields = [username, password, birthdate]
+
+var fieldValidation = fields.every(function(field) {
+  return field.validate()
 })
 
-console.log(allcomputersCanRunProgram)
-
-var someComputersCanRunProgra = computers.some(function(computer) {
-  return computer.ram <= 16
-})
-
-console.log(someComputersCanRunProgra)
+console.log(fieldValidation)
