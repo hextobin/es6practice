@@ -161,31 +161,61 @@
 
 // numbers greater than 50
 
-var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
+// var numbers = [15, 25, 35, 45, 55, 65, 75, 85, 95];
 
-var filteredNumbers = numbers.filter(function(number) {
-    return number > 50
-});
+// var filteredNumbers = numbers.filter(function(number) {
+//     return number > 50
+// });
 
-// returning admin users
+// // returning admin users
+
+// var users = [
+//   { id: 1, admin: true },  
+//   { id: 2, admin: false },
+//   { id: 3, admin: false },
+//   { id: 4, admin: false },
+//   { id: 5, admin: true },
+//  ];
+ 
+//  var filteredUsers = users.filter(function(user) {
+//      return user.admin === true
+//  });
+
+// //  reject function
+
+// function reject(array, iteratorFunction) {
+//   return array.filter(function(item){
+//       return !iteratorFunction(item)
+//   })
+// }
+// *******************************
 
 var users = [
-  { id: 1, admin: true },  
-  { id: 2, admin: false },
-  { id: 3, admin: false },
-  { id: 4, admin: false },
-  { id: 5, admin: true },
- ];
- 
- var filteredUsers = users.filter(function(user) {
-     return user.admin === true
- });
+  { name: 'Jill' },
+  { name: 'Alex' },
+  { name: 'Bill' },
+]
 
-//  reject function
+var user
 
-function reject(array, iteratorFunction) {
-  return array.filter(function(item){
-      return !iteratorFunction(item)
-  })
+user = users.find(function(user) {
+  return user.name === 'Alex'
+})
+
+console.log(user)
+
+function Car(model) {
+  this.model = model
 }
-// *******************************
+
+var cars = [
+  new Car('Buick'),
+  new Car('Camaro'),
+  new Car('Focus'),
+]
+
+var car = cars.find(function(car) {
+  return car.model === 'Camaro'
+})
+
+console.log(car)
