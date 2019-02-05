@@ -319,22 +319,66 @@
 
 // console.log(fieldValidation)
 
-var requests = [
-  { url: '/photos', status: 'complete' },
-  { url: '/albums', status: 'pending' },
-  { url: '/users', status: 'failed' }
-];
+// var requests = [
+//   { url: '/photos', status: 'complete' },
+//   { url: '/albums', status: 'pending' },
+//   { url: '/users', status: 'failed' }
+// ];
 
-var inProgress = requests.some(function(request) {
-    return request.status === 'pending'
-});
+// var inProgress = requests.some(function(request) {
+//     return request.status === 'pending'
+// });
 
-var users = [
-  { id: 21, hasSubmitted: true },
-  { id: 62, hasSubmitted: false },
-  { id: 4, hasSubmitted: true }
-];
+// var users = [
+//   { id: 21, hasSubmitted: true },
+//   { id: 62, hasSubmitted: false },
+//   { id: 4, hasSubmitted: true }
+// ];
 
-var hasSubmitted = users.every(function(user) {
-    return user.hasSubmitted === true
-});
+// var hasSubmitted = users.every(function(user) {
+//     return user.hasSubmitted === true
+// });
+
+// *****************************
+
+// var numbers = [ 10, 20 , 30 ]
+// var sum = 0
+
+// for (var i = 0; i < numbers.length; i++) {
+//   sum += numbers[i]
+// }
+
+// var foo = numbers.reduce(function(sum, number) {
+//   return sum + number
+// }, 0)
+
+// console.log(foo)
+
+// var primaryColors = [
+//   { color: 'red'},
+//   { color: 'yellow'},
+//   { color: 'blue'},
+// ]
+
+// var prim = primaryColors.reduce(function(previous, primaryColor) {
+//   previous.push(primaryColor.color)
+//   return previous
+// }, [])
+
+// console.log(prim)
+
+function balancedParens(string) {
+  return !string.split("").reduce(function(previous, char) {
+    if (previous < 0) { return previous }
+    if(char === "(") {
+      return ++previous
+    }
+    if(char === ")") {
+      return -- previous
+    }
+    return previous
+  }, 0)
+}
+
+console.log(balancedParens(")()()()("))
+
