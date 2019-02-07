@@ -382,39 +382,107 @@
 
 // console.log(balancedParens(")()()()("))
 
-var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
+// var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
 
-var totalDistance = trips.reduce(function(acc, trip) {
-    return acc + trip.distance
-}, 0);
+// var totalDistance = trips.reduce(function(acc, trip) {
+//     return acc + trip.distance
+// }, 0);
 
-var desks = [
-  { type: 'sitting' },
-  { type: 'standing' },
-  { type: 'sitting' },
-  { type: 'sitting' },
-  { type: 'standing' }
-];
+// var desks = [
+//   { type: 'sitting' },
+//   { type: 'standing' },
+//   { type: 'sitting' },
+//   { type: 'sitting' },
+//   { type: 'standing' }
+// ];
 
-var deskTypes = desks.reduce(function(obj, desk) {
-    if(desk.type === 'sitting') {
-        ++obj.sitting
-    }
-    if(desk.type === 'standing') {
-        ++obj.standing
-    }
-    return obj
-}, { sitting: 0, standing: 0 });
+// var deskTypes = desks.reduce(function(obj, desk) {
+//     if(desk.type === 'sitting') {
+//         ++obj.sitting
+//     }
+//     if(desk.type === 'standing') {
+//         ++obj.standing
+//     }
+//     return obj
+// }, { sitting: 0, standing: 0 });
 
-function unique(array) {
-  return array.reduce(function(prev, el) {
-    var newItem = prev.find(function(prevEl) {
-      return prevEl === el
-    })
-    if( newItem !== el ) {
-      prev.push(el)
-    }
-    return prev
-  }, [])
+// function unique(array) {
+//   return array.reduce(function(prev, el) {
+//     var newItem = prev.find(function(prevEl) {
+//       return prevEl === el
+//     })
+//     if( newItem !== el ) {
+//       prev.push(el)
+//     }
+//     return prev
+//   }, [])
+// }
+
+// **************************
+// const name = 'Jane'
+// let title = 'Software Engineer'
+// let hourlyWage = 40
+
+// for(let i of Array(100).keys()) {
+//   console.log( i )
+// }
+
+function getMessage() {
+  return `The year is ${new Date().getFullYear()}`
 }
 
+console.log(getMessage())
+
+function doubleMessage(number) {
+  return `Your number doubled is ${2 * number}`;
+}
+
+function fullName(firstName, lastName) {
+  return `${firstName} ${lastName}`;
+}
+
+// implicit return
+const add = (a, b) => a + b
+
+
+console.log(add(1,2))
+
+// can omit parens if only one argument
+const double = number => 2 * number
+
+console.log(double(8))
+
+const numbers = [1,2,3]
+
+console.log(numbers.map(number => 2 * number))
+
+
+// makes use of lexical this
+const team = {
+  members: ['Jane', 'Bill'],
+  teamName: 'Super Squad',
+  teamSummary: function() {
+    return this.members.map((member) => {
+      return `${member} is on team ${this.teamName}`
+    })
+  }
+}
+
+console.log(team.teamSummary())
+
+const fibonacci = n => {
+  if (n < 3) return 1;
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const profile = {
+  name: 'Alex',
+  getName: function() {
+      return this.name
+  }
+  // getName: () => {
+  //   console.log(this)
+  // }
+};
+
+profile.getName()
