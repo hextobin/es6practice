@@ -367,18 +367,54 @@
 
 // console.log(prim)
 
-function balancedParens(string) {
-  return !string.split("").reduce(function(previous, char) {
-    if (previous < 0) { return previous }
-    if(char === "(") {
-      return ++previous
-    }
-    if(char === ")") {
-      return -- previous
-    }
-    return previous
-  }, 0)
-}
+// function balancedParens(string) {
+//   return !string.split("").reduce(function(previous, char) {
+//     if (previous < 0) { return previous }
+//     if(char === "(") {
+//       return ++previous
+//     }
+//     if(char === ")") {
+//       return -- previous
+//     }
+//     return previous
+//   }, 0)
+// }
 
-console.log(balancedParens(")()()()("))
+// console.log(balancedParens(")()()()("))
+
+var trips = [{ distance: 34 }, { distance: 12 } , { distance: 1 }];
+
+var totalDistance = trips.reduce(function(acc, trip) {
+    return acc + trip.distance
+}, 0);
+
+var desks = [
+  { type: 'sitting' },
+  { type: 'standing' },
+  { type: 'sitting' },
+  { type: 'sitting' },
+  { type: 'standing' }
+];
+
+var deskTypes = desks.reduce(function(obj, desk) {
+    if(desk.type === 'sitting') {
+        ++obj.sitting
+    }
+    if(desk.type === 'standing') {
+        ++obj.standing
+    }
+    return obj
+}, { sitting: 0, standing: 0 });
+
+function unique(array) {
+  return array.reduce(function(prev, el) {
+    var newItem = prev.find(function(prevEl) {
+      return prevEl === el
+    })
+    if( newItem !== el ) {
+      prev.push(el)
+    }
+    return prev
+  }, [])
+}
 
