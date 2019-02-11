@@ -427,62 +427,128 @@
 //   console.log( i )
 // }
 
-function getMessage() {
-  return `The year is ${new Date().getFullYear()}`
+// function getMessage() {
+//   return `The year is ${new Date().getFullYear()}`
+// }
+
+// console.log(getMessage())
+
+// function doubleMessage(number) {
+//   return `Your number doubled is ${2 * number}`;
+// }
+
+// function fullName(firstName, lastName) {
+//   return `${firstName} ${lastName}`;
+// }
+
+// // implicit return
+// const add = (a, b) => a + b
+
+
+// console.log(add(1,2))
+
+// // can omit parens if only one argument
+// const double = number => 2 * number
+
+// console.log(double(8))
+
+// const numbers = [1,2,3]
+
+// console.log(numbers.map(number => 2 * number))
+
+
+// // makes use of lexical this
+// const team = {
+//   members: ['Jane', 'Bill'],
+//   teamName: 'Super Squad',
+//   teamSummary: function() {
+//     return this.members.map((member) => {
+//       return `${member} is on team ${this.teamName}`
+//     })
+//   }
+// }
+
+// console.log(team.teamSummary())
+
+// const fibonacci = n => {
+//   if (n < 3) return 1;
+//   return fibonacci(n - 1) + fibonacci(n - 2);
+// }
+
+// const profile = {
+//   name: 'Alex',
+//   getName: function() {
+//       return this.name
+//   }
+//   // getName: () => {
+//   //   console.log(this)
+//   // }
+// };
+
+// profile.getName()
+
+// ******************************
+
+// function createBookShop(inventory) {
+//   return {
+//     inventory,
+//     inventoryValue() {
+//       return this.inventory.reduce((total, book) => total + book.price, 0)
+//     },
+//     priceForTitle(title) {
+//       return this.inventory.find((book) => book.title === title).price
+//     }
+//   }
+// }
+
+// const inventory = [
+//   { title: 'Harry Potter', price: 10 },
+//   { title: 'City of Thieves', price: 15 },
+// ]
+
+// const bookShop = createBookShop(inventory)
+
+// console.log(bookShop.inventoryValue())
+// console.log(bookShop.priceForTitle('City of Thieves'))
+
+function saveFile() {
+  $.ajax({ 
+    url, 
+    data, 
+    method: 'POST' 
+  })
 }
 
-console.log(getMessage())
+const url = 'http://fileupload.com'
+const data = { color: 'red' }
 
-function doubleMessage(number) {
-  return `Your number doubled is ${2 * number}`;
+const red = '#ff0000';
+const blue = '#0000ff';
+
+const COLORS = { red, blue };
+
+const fields = ['firstName', 'lastName', 'phoneNumber'];
+      
+const props = { fields };
+
+const canvasDimensions = function(width, initialHeight) {
+  const height = initialHeight * 9 /16;
+  return { 
+    width, 
+    height 
+  };
 }
 
-function fullName(firstName, lastName) {
-  return `${firstName} ${lastName}`;
-}
+const color = 'red';
 
-// implicit return
-const add = (a, b) => a + b
-
-
-console.log(add(1,2))
-
-// can omit parens if only one argument
-const double = number => 2 * number
-
-console.log(double(8))
-
-const numbers = [1,2,3]
-
-console.log(numbers.map(number => 2 * number))
-
-
-// makes use of lexical this
-const team = {
-  members: ['Jane', 'Bill'],
-  teamName: 'Super Squad',
-  teamSummary: function() {
-    return this.members.map((member) => {
-      return `${member} is on team ${this.teamName}`
-    })
+const Car = {
+  color,
+  drive() {
+    return 'Vroom!';
+  },
+  getColor() {
+    return this.color;
   }
-}
-
-console.log(team.teamSummary())
-
-const fibonacci = n => {
-  if (n < 3) return 1;
-  return fibonacci(n - 1) + fibonacci(n - 2);
-}
-
-const profile = {
-  name: 'Alex',
-  getName: function() {
-      return this.name
-  }
-  // getName: () => {
-  //   console.log(this)
-  // }
 };
 
-profile.getName()
+saveFile(url, data)
