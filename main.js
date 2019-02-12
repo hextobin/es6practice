@@ -552,31 +552,52 @@
 
 // **************
 // default function argument
-function makeAjaxRequest (url, method = 'GET') {
-  return method
+// function makeAjaxRequest (url, method = 'GET') {
+//   return method
+// }
+
+// console.log(makeAjaxRequest('google.com', 'POST'))
+// console.log(makeAjaxRequest('google.com', 'GET'))
+
+// function User (id) {
+//   this.id = id
+// }
+
+// function generateId () {
+//   return Math.random() * 999999
+// }
+// function createAdminUser (user = new User(generateId())) {
+//   user.admin = true
+// }
+
+// createAdminUser()
+
+// function sum (a = 0, b = 0) {
+//   return a + b
+// }
+
+// function addOffset (style = {}) {
+//   style.offset = '10px'
+//   return style
+// }
+// ************************
+// function addNumbers (...numbers) {
+//   return numbers.reduce((sum, number) => {
+//     return sum + number
+//   }, 0)
+// }
+
+// console.log(addNumbers(1, 2, 3, 4, 5, 6, 7)
+
+const defaultColors = ['red', 'green']
+const userFavoriteColors = ['orange', 'yellow']
+
+console.log([ ...defaultColors, ...userFavoriteColors, 'blue' ])
+
+function validateShoppingList (...items) {
+  if (items.indexOf('milk') < 0) {
+    return [ 'milk', ...items ]
+  }
 }
 
-console.log(makeAjaxRequest('google.com', 'POST'))
-console.log(makeAjaxRequest('google.com', 'GET'))
-
-function User (id) {
-  this.id = id
-}
-
-function generateId () {
-  return Math.random() * 999999
-}
-function createAdminUser (user = new User(generateId())) {
-  user.admin = true
-}
-
-createAdminUser()
-
-function sum (a = 0, b = 0) {
-  return a + b
-}
-
-function addOffset (style = {}) {
-  style.offset = '10px'
-  return style
-}
+console.log(validateShoppingList('oranges', 'bread', 'eggs'))
