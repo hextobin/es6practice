@@ -1,5 +1,4 @@
 
-
 // var colors = ['red', 'blue', 'green']
 
 // for( var i = 0; i < colors.length; i++) {
@@ -30,7 +29,7 @@
 //     { id: 52, title: 'Code Refactor City' },
 //     { id: 105, title: 'The Brightest Ruby' }
 //   ];
-  
+
 //   // for (var i = 0; i < posts.length; i++) {
 //   //   savePost(posts[i]);
 //   // }
@@ -122,8 +121,8 @@
 // // type is vegetable, quantity > 0, price < 10
 
 // let vegArr = products.filter(function(product) {
-//   return (product.type === 'vegetable' 
-//   && product.quantity > 0 
+//   return (product.type === 'vegetable'
+//   && product.quantity > 0
 //   && product.price < 14)
 // })
 
@@ -170,13 +169,13 @@
 // // returning admin users
 
 // var users = [
-//   { id: 1, admin: true },  
+//   { id: 1, admin: true },
 //   { id: 2, admin: false },
 //   { id: 3, admin: false },
 //   { id: 4, admin: false },
 //   { id: 5, admin: true },
 //  ];
- 
+
 //  var filteredUsers = users.filter(function(user) {
 //      return user.admin === true
 //  });
@@ -444,7 +443,6 @@
 // // implicit return
 // const add = (a, b) => a + b
 
-
 // console.log(add(1,2))
 
 // // can omit parens if only one argument
@@ -455,7 +453,6 @@
 // const numbers = [1,2,3]
 
 // console.log(numbers.map(number => 2 * number))
-
 
 // // makes use of lexical this
 // const team = {
@@ -511,44 +508,75 @@
 // console.log(bookShop.inventoryValue())
 // console.log(bookShop.priceForTitle('City of Thieves'))
 
-function saveFile() {
-  $.ajax({ 
-    url, 
-    data, 
-    method: 'POST' 
-  })
+// function saveFile() {
+//   $.ajax({
+//     url,
+//     data,
+//     method: 'POST'
+//   })
+// }
+
+// const url = 'http://fileupload.com'
+// const data = { color: 'red' }
+
+// const red = '#ff0000';
+// const blue = '#0000ff';
+
+// const COLORS = { red, blue };
+
+// const fields = ['firstName', 'lastName', 'phoneNumber'];
+
+// const props = { fields };
+
+// const canvasDimensions = function(width, initialHeight) {
+//   const height = initialHeight * 9 /16;
+//   return {
+//     width,
+//     height
+//   };
+// }
+
+// const color = 'red';
+
+// const Car = {
+//   color,
+//   drive() {
+//     return 'Vroom!';
+//   },
+//   getColor() {
+//     return this.color;
+//   }
+// };
+
+// saveFile(url, data)
+
+// **************
+// default function argument
+function makeAjaxRequest (url, method = 'GET') {
+  return method
 }
 
-const url = 'http://fileupload.com'
-const data = { color: 'red' }
+console.log(makeAjaxRequest('google.com', 'POST'))
+console.log(makeAjaxRequest('google.com', 'GET'))
 
-const red = '#ff0000';
-const blue = '#0000ff';
-
-const COLORS = { red, blue };
-
-const fields = ['firstName', 'lastName', 'phoneNumber'];
-      
-const props = { fields };
-
-const canvasDimensions = function(width, initialHeight) {
-  const height = initialHeight * 9 /16;
-  return { 
-    width, 
-    height 
-  };
+function User (id) {
+  this.id = id
 }
 
-const color = 'red';
+function generateId () {
+  return Math.random() * 999999
+}
+function createAdminUser (user = new User(generateId())) {
+  user.admin = true
+}
 
-const Car = {
-  color,
-  drive() {
-    return 'Vroom!';
-  },
-  getColor() {
-    return this.color;
-  }
-};
+createAdminUser()
 
-saveFile(url, data)
+function sum (a = 0, b = 0) {
+  return a + b
+}
+
+function addOffset (style = {}) {
+  style.offset = '10px'
+  return style
+}
