@@ -589,15 +589,73 @@
 
 // console.log(addNumbers(1, 2, 3, 4, 5, 6, 7)
 
-const defaultColors = ['red', 'green']
-const userFavoriteColors = ['orange', 'yellow']
+// const defaultColors = ['red', 'green']
+// const userFavoriteColors = ['orange', 'yellow']
 
-console.log([ ...defaultColors, ...userFavoriteColors, 'blue' ])
+// console.log([ ...defaultColors, ...userFavoriteColors, 'blue' ])
 
-function validateShoppingList (...items) {
-  if (items.indexOf('milk') < 0) {
-    return [ 'milk', ...items ]
-  }
+// function validateShoppingList (...items) {
+//   if (items.indexOf('milk') < 0) {
+//     return [ 'milk', ...items ]
+//   }
+// }
+
+// console.log(validateShoppingList('oranges', 'bread', 'eggs'))
+
+// const MathLibrary = {
+//   calculateProduct (...rest) {
+//     console.log('Please use the multiply method instead')
+//     return this.multiply(...rest)
+//   },
+//   multiply (a, b) {
+//     return a * b
+//   }
+// }
+
+// function product (...rest) {
+//   var numbers = [...rest]
+
+//   return numbers.reduce(function (acc, number) {
+//     return acc * number
+//   }, 1)
+// }
+
+// function join (array1, array2) {
+//   return [...array1, ...array2]
+// }
+
+// function unshift (array, ...rest) {
+//   return [...rest, ...array]
+// }
+
+// let expense = {
+//   type: 'Business',
+//   amount: '$45 USD'
+// }
+
+// const { type, amount } = expense
+// console.log(type, amount)
+
+let savedFile = {
+  extension: 'jpg',
+  name: 'repost',
+  size: 14040
 }
 
-console.log(validateShoppingList('oranges', 'bread', 'eggs'))
+function fileSummary ({ name, extension, size }, { color }) {
+  return `The file ${color}  ${name}.${extension} is of size ${size}`
+}
+
+console.log(fileSummary(savedFile, { color: 'red' }))
+
+const companies = [
+  'Google',
+  'Facebook',
+  'Uber'
+]
+
+const [ name, name2, ...rest ] = companies
+console.log(name2)
+const { length } = companies
+console.log(length)
+
