@@ -636,26 +636,67 @@
 // const { type, amount } = expense
 // console.log(type, amount)
 
-let savedFile = {
-  extension: 'jpg',
-  name: 'repost',
-  size: 14040
+// let savedFile = {
+//   extension: 'jpg',
+//   name: 'repost',
+//   size: 14040
+// }
+
+// function fileSummary ({ name, extension, size }, { color }) {
+//   return `The file ${color}  ${name}.${extension} is of size ${size}`
+// }
+
+// console.log(fileSummary(savedFile, { color: 'red' }))
+
+// const companies = [
+//   'Google',
+//   'Facebook',
+//   'Uber'
+// ]
+
+// const [ name, name2, ...rest ] = companies
+// console.log(name2)
+// const { length } = companies
+// console.log(length)
+
+// const companies = [
+//   { name: 'Google', location: 'Mountain View' },
+//   { name: 'Facebook', location: 'Menlo Park' },
+//   { name: 'Uber', location: 'San Francisco' }
+// ]
+
+// // mixing array and object destructuring
+// const [{ location }] = companies
+// console.log(location)
+
+// const Google = {
+//   locations: ['Mountian View', 'New York', 'London']
+// }
+
+// const { locations: [ location, location2, ...rest ] } = Google
+
+// console.log(location, rest)
+
+function signup ({ username, password, email, dateOfBirth, city }) {
 }
 
-function fileSummary ({ name, extension, size }, { color }) {
-  return `The file ${color}  ${name}.${extension} is of size ${size}`
+const user = {
+  username: 'myname',
+  password: 'password',
+  email: 'myemail@example.com',
+  dateOfBirth: '1/1/1900',
+  city: 'New York'
 }
 
-console.log(fileSummary(savedFile, { color: 'red' }))
+signup(user)
 
-const companies = [
-  'Google',
-  'Facebook',
-  'Uber'
+const points = [
+  [4, 5],
+  [10, 1],
+  [0, 40]
 ]
 
-const [ name, name2, ...rest ] = companies
-console.log(name2)
-const { length } = companies
-console.log(length)
-
+// destructuring arguments
+points.map(([ x, y ]) => {
+  return { x, y }
+})
