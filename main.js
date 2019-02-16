@@ -700,3 +700,31 @@ const points = [
 points.map(([ x, y ]) => {
   return { x, y }
 })
+
+const profile = {
+  title: 'Engineer',
+  department: 'Engineering'
+}
+
+function isEngineer ({ title, department }) {
+  return title === 'Engineer' && department === 'Engineering'
+}
+
+const classes = [
+  [ 'Chemistry', '9AM', 'Mr. Darnick' ],
+  [ 'Physics', '10:15AM', 'Mrs. Lithun'],
+  [ 'Math', '11:30AM', 'Mrs. Vitalis' ]
+]
+
+const classesAsObject = classes.map(function ([subject, time, teacher]) {
+  return { subject, time, teacher }
+})
+
+const numbers = [1, 2, 3]
+
+function double ([num, ...rest]) {
+  if (rest.length === 0) {
+    return [num * 2]
+  }
+  return [num * 2, ...double(rest)]
+}
