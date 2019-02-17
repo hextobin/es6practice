@@ -754,10 +754,20 @@ class Car {
   constructor ({ title }) {
     this.title = title
   }
-  drive() {
+  drive () {
     return 'vroom'
   }
 }
+
+class Toyota {
+  honk () {
+    return 'beep'
+  }
+}
+
+const toyota = new Toyota()
+
+cl(toyota.honk())
 
 const car = new Car({ title: 'Toyota' })
 cl(car)
