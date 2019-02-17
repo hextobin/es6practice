@@ -759,16 +759,16 @@ class Car {
   }
 }
 
-class Toyota {
+class Toyota extends Car {
+  constructor (options) {
+    super(options)
+    this.color = options.color
+  }
   honk () {
     return 'beep'
   }
 }
 
-const toyota = new Toyota()
+const toyota = new Toyota({ color: 'red', title: 'Daily Driver' })
 
-cl(toyota.honk())
-
-const car = new Car({ title: 'Toyota' })
-cl(car)
-cl(car.drive())
+cl(toyota.drive())
