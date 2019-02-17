@@ -677,54 +677,88 @@
 
 // console.log(location, rest)
 
-function signup ({ username, password, email, dateOfBirth, city }) {
+// function signup ({ username, password, email, dateOfBirth, city }) {
+// }
+
+// const user = {
+//   username: 'myname',
+//   password: 'password',
+//   email: 'myemail@example.com',
+//   dateOfBirth: '1/1/1900',
+//   city: 'New York'
+// }
+
+// signup(user)
+
+// const points = [
+//   [4, 5],
+//   [10, 1],
+//   [0, 40]
+// ]
+
+// // destructuring arguments
+// points.map(([ x, y ]) => {
+//   return { x, y }
+// })
+
+// const profile = {
+//   title: 'Engineer',
+//   department: 'Engineering'
+// }
+
+// function isEngineer ({ title, department }) {
+//   return title === 'Engineer' && department === 'Engineering'
+// }
+
+// const classes = [
+//   [ 'Chemistry', '9AM', 'Mr. Darnick' ],
+//   [ 'Physics', '10:15AM', 'Mrs. Lithun'],
+//   [ 'Math', '11:30AM', 'Mrs. Vitalis' ]
+// ]
+
+// const classesAsObject = classes.map(function ([subject, time, teacher]) {
+//   return { subject, time, teacher }
+// })
+
+// const numbers = [1, 2, 3]
+
+// function double ([num, ...rest]) {
+//   if (rest.length === 0) {
+//     return [num * 2]
+//   }
+//   return [num * 2, ...double(rest)]
+// }
+// ****************************
+
+const cl = (...logThing) => {
+  console.log(...logThing)
 }
 
-const user = {
-  username: 'myname',
-  password: 'password',
-  email: 'myemail@example.com',
-  dateOfBirth: '1/1/1900',
-  city: 'New York'
-}
+// function Car (options) {
+//   this.title = options.title
+// } 
 
-signup(user)
+// Car.prototype.drive = function () {
+//   return 'vroom'
+// }
 
-const points = [
-  [4, 5],
-  [10, 1],
-  [0, 40]
-]
+// function Toyota (options) {
+//   this.color = options.color
+// }
 
-// destructuring arguments
-points.map(([ x, y ]) => {
-  return { x, y }
-})
+// const toyota = new Toyota({ color: 'red', title: 'Daily Driver' })
 
-const profile = {
-  title: 'Engineer',
-  department: 'Engineering'
-}
+// cl(toyota)
 
-function isEngineer ({ title, department }) {
-  return title === 'Engineer' && department === 'Engineering'
-}
-
-const classes = [
-  [ 'Chemistry', '9AM', 'Mr. Darnick' ],
-  [ 'Physics', '10:15AM', 'Mrs. Lithun'],
-  [ 'Math', '11:30AM', 'Mrs. Vitalis' ]
-]
-
-const classesAsObject = classes.map(function ([subject, time, teacher]) {
-  return { subject, time, teacher }
-})
-
-const numbers = [1, 2, 3]
-
-function double ([num, ...rest]) {
-  if (rest.length === 0) {
-    return [num * 2]
+class Car {
+  constructor ({ title }) {
+    this.title = title
   }
-  return [num * 2, ...double(rest)]
+  drive() {
+    return 'vroom'
+  }
 }
+
+const car = new Car({ title: 'Toyota' })
+cl(car)
+cl(car.drive())
