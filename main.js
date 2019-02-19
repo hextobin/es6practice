@@ -736,7 +736,7 @@ const cl = (...logThing) => {
 
 // function Car (options) {
 //   this.title = options.title
-// } 
+// }
 
 // Car.prototype.drive = function () {
 //   return 'vroom'
@@ -750,25 +750,65 @@ const cl = (...logThing) => {
 
 // cl(toyota)
 
-class Car {
-  constructor ({ title }) {
-    this.title = title
-  }
-  drive () {
-    return 'vroom'
-  }
+// class Car {
+//   constructor ({ title }) {
+//     this.title = title
+//   }
+//   drive () {
+//     return 'vroom'
+//   }
+// }
+
+// class Toyota extends Car {
+//   constructor (options) {
+//     super(options)
+//     this.color = options.color
+//   }
+//   honk () {
+//     return 'beep'
+//   }
+// }
+
+// const toyota = new Toyota({ color: 'red', title: 'Daily Driver' })
+
+// cl(toyota.drive())
+
+// class Monster {
+//   constructor (options) {
+//     this.health = 100
+//     this.name = options.name
+//   }
+// }
+
+// class Snake extends Monster {
+//   bite (snake) {
+//     snake.health -= 10
+//   }
+// }
+
+// const colors = ['red', 'green', 'blue']
+
+// for (let color of colors) {
+//   cl(color)
+// }
+
+function * shopping () {
+  console.log('console test')
+  // stuff on the sidewalk
+  // walking down the sidewalk
+
+  // go into the store with cash
+  const stuffFromStore =  yield 'cash'
+  console.log('console test in')
+  // walking back home
+  return stuffFromStore
 }
 
-class Toyota extends Car {
-  constructor (options) {
-    super(options)
-    this.color = options.color
-  }
-  honk () {
-    return 'beep'
-  }
-}
+// stufff in the store
+const gen = shopping()
+cl(gen.next()) // leaving our house
+// walked into store
+console.log('console test out')
+cl(gen.next('groceries')) // leaving the store with groceries
 
-const toyota = new Toyota({ color: 'red', title: 'Daily Driver' })
-
-cl(toyota.drive())
+// cl(numbers())
