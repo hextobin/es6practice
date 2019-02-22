@@ -792,23 +792,56 @@ const cl = (...logThing) => {
 //   cl(color)
 // }
 
-function * shopping () {
-  console.log('console test')
-  // stuff on the sidewalk
-  // walking down the sidewalk
+// function * shopping () {
+//   console.log('console test')
+//   // stuff on the sidewalk
+//   // walking down the sidewalk
+//   // go into the store with cash
+//   const stuffFromStore = yield 'cash'
+//   // walking back home
+//   const cleanClothes = yield 'laundry'
+//   return [stuffFromStore, cleanClothes]
+// }
 
-  // go into the store with cash
-  const stuffFromStore =  yield 'cash'
-  console.log('console test in')
-  // walking back home
-  return stuffFromStore
+// // stufff in the store
+// const gen = shopping()
+// cl(gen.next()) // leaving our house
+// // walked into store
+
+// cl(gen.next('groceries')) // leaving the store with groceries
+// cl(gen.next('clean clothes'))
+
+// function * colors () {
+//   yield 'red'
+//   yield 'blue'
+//   yield 'green'
+// }
+
+// const myColors = []
+// for (let color of colors()) {
+//   myColors.push(color)
+// }
+
+// cl(myColors)
+
+const engineeringTeam = {
+  size: 3,
+  department: 'Engineering',
+  lead: 'Jill',
+  manager: 'Alex',
+  engineer: 'Bill'
 }
 
-// stufff in the store
-const gen = shopping()
-cl(gen.next()) // leaving our house
-// walked into store
-console.log('console test out')
-cl(gen.next('groceries')) // leaving the store with groceries
+function * TeamIterator (team) {
+  yield team.lead
+  yield team.manager
+  yield team.engineer
+}
 
-// cl(numbers())
+const names = []
+
+for (let name of TeamIterator(engineeringTeam)) {
+  names.push(name)
+}
+
+cl(names)
