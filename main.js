@@ -824,34 +824,64 @@ const cl = (...logThing) => {
 
 // cl(myColors)
 
-const testingTeam = {
-  lead: 'Amanda',
-  tester: 'Bob',
-  [Symbol.iterator]: function * () {
-    yield this.lead
-    yield this.tester
+// const testingTeam = {
+//   lead: 'Amanda',
+//   tester: 'Bob',
+//   [Symbol.iterator]: function * () {
+//     yield this.lead
+//     yield this.tester
+//   }
+// }
+
+// const engineeringTeam = {
+//   testingTeam,
+//   size: 3,
+//   department: 'Engineering',
+//   lead: 'Jill',
+//   manager: 'Alex',
+//   engineer: 'Bill',
+//   [Symbol.iterator]: function * () {
+//     yield this.lead
+//     yield this.manager
+//     yield this.engineer
+//     yield * this.testingTeam
+//   }
+// }
+
+// const names = []
+
+// for (let name of engineeringTeam) {
+//   names.push(name)
+// }
+
+// cl(names)
+// ****************************
+
+class Comment {
+  constructor (content, children) {
+    this.content = content
+    this.children = children
+  }
+  * [Symbol.iterator] () {
+    yield this.content
+    for (let child of this.children) {
+      yield * child
+    }
   }
 }
 
-const engineeringTeam = {
-  testingTeam,
-  size: 3,
-  department: 'Engineering',
-  lead: 'Jill',
-  manager: 'Alex',
-  engineer: 'Bill',
-  [Symbol.iterator]: function * () {
-    yield this.lead
-    yield this.manager
-    yield this.engineer
-    yield * this.testingTeam
-  }
+const children = [
+  new Comment('good comment', []),
+  new Comment('bad comment', []),
+  new Comment('meh', [])
+]
+
+const tree = new Comment('Great post!', children)
+
+const values = []
+
+for (let value of tree) {
+  values.push(value)
 }
 
-const names = []
-
-for (let name of engineeringTeam) {
-  names.push(name)
-}
-
-cl(names)
+cl(values)
