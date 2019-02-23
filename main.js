@@ -826,7 +826,11 @@ const cl = (...logThing) => {
 
 const testingTeam = {
   lead: 'Amanda',
-  tester: 'Bob'
+  tester: 'Bob',
+  [Symbol.iterator]: function * () {
+    yield this.lead
+    yield this.tester
+  }
 }
 
 const engineeringTeam = {
@@ -835,25 +839,18 @@ const engineeringTeam = {
   department: 'Engineering',
   lead: 'Jill',
   manager: 'Alex',
-  engineer: 'Bill'
-}
-
-function * TeamIterator (team) {
-  yield team.lead
-  yield team.manager
-  yield team.engineer
-  const testingTeamGenerator = TestingTeamIterator(team.testingTeam)
-  yield * testingTeamGenerator
-}
-
-function * TestingTeamIterator (team) {
-  yield team.lead
-  yield team.tester
+  engineer: 'Bill',
+  [Symbol.iterator]: function * () {
+    yield this.lead
+    yield this.manager
+    yield this.engineer
+    yield * this.testingTeam
+  }
 }
 
 const names = []
 
-for (let name of TeamIterator(engineeringTeam)) {
+for (let name of engineeringTeam) {
   names.push(name)
 }
 
