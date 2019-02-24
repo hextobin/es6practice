@@ -857,31 +857,49 @@ const cl = (...logThing) => {
 // cl(names)
 // ****************************
 
-class Comment {
-  constructor (content, children) {
-    this.content = content
-    this.children = children
-  }
-  * [Symbol.iterator] () {
-    yield this.content
-    for (let child of this.children) {
-      yield * child
-    }
-  }
-}
+// class Comment {
+//   constructor (content, children) {
+//     this.content = content
+//     this.children = children
+//   }
+//   * [Symbol.iterator] () {
+//     yield this.content
+//     for (let child of this.children) {
+//       yield * child
+//     }
+//   }
+// }
 
-const children = [
-  new Comment('good comment', []),
-  new Comment('bad comment', []),
-  new Comment('meh', [])
-]
+// const children = [
+//   new Comment('good comment', []),
+//   new Comment('bad comment', []),
+//   new Comment('meh', [])
+// ]
 
-const tree = new Comment('Great post!', children)
+// const tree = new Comment('Great post!', children)
 
-const values = []
+// const values = []
 
-for (let value of tree) {
-  values.push(value)
-}
+// for (let value of tree) {
+//   values.push(value)
+// }
 
-cl(values)
+// cl(values)
+
+// ************************
+
+promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve()
+  }, 3000)
+})
+
+promise
+  .then(() => console.log('finally finished')).then(() => console.log('I was also ran'))
+  .catch(() => console.log('uh oh'))
+
+url = 'https://jsonplaceholder.typicode.com/posts/'
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => console.log(data))
